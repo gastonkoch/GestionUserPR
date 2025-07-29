@@ -1,4 +1,4 @@
-package com.User.mesUno.service;
+package com.User.mesUno.service.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -14,4 +14,6 @@ public class UserDto {
     private String userName;
     private String userEmail;
     private String userPassword;
+    private CarDto car;
+    private CityDto city;
 }

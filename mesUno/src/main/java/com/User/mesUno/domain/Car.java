@@ -24,10 +24,10 @@ public class Car {
     private String carName;
     private String carBrand;
 
-    // Se entiende que un usuario puede poseer más de un auto, pero se hace con fines de realizar una relacion OneToOne
-    @OneToOne(
-            mappedBy = "car",
-            fetch = FetchType.EAGER
-    )
-    private User user;
+//    // Se entiende que un usuario puede poseer más de un auto, pero se hace con fines de realizar una relacion OneToOne
+//    @OneToOne(
+//            mappedBy = "car",
+//            fetch = FetchType.LAZY
+//    )
+//    private User user;
 }

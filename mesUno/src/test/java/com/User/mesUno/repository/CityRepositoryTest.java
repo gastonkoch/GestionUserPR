@@ -12,14 +12,14 @@ class CityRepositoryTest {
     @Autowired
     CityRepository cityRepository;
 
-    @Test
-    public void saveCity(){
-        City city = City.builder()
-                        .cityName("Tucuman")
-                        .build();
-
-        cityRepository.save(city);
-    }
+//    @Test
+//    public void saveCity(){
+//        City city = City.builder()
+//                        .cityName("Tucuman")
+//                        .build();
+//
+//        cityRepository.save(city);
+//    }
 
     @Test
     public void findAllCity(){

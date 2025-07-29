@@ -1,9 +1,7 @@
 package com.User.mesUno.controller;
 
-import com.User.mesUno.domain.User;
-import com.User.mesUno.exception.UserNotFoundException;
 import com.User.mesUno.service.IUserService;
-import com.User.mesUno.service.UserDto;
+import com.User.mesUno.service.dto.UserDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -26,6 +24,11 @@ public class UserController {
     @GetMapping("/getUserById/{userId}")
     public ResponseEntity<UserDto> getUserById(@PathVariable Long userId) {
         return ResponseEntity.ok(userService.getUserById(userId));
+    }
+
+    @GetMapping("/findByCity/{cityId}")
+    public ResponseEntity<List<UserDto>> findByCity(@PathVariable Long cityId) {
+        return ResponseEntity.ok(userService.getUsersByCity(cityId));
     }
 
     @PostMapping("/saveUser")
