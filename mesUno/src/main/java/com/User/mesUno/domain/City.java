@@ -31,7 +31,17 @@ public class City {
     @OneToMany(
             mappedBy = "city",
             cascade = CascadeType.ALL,
-            fetch = FetchType.LAZY
+            fetch = FetchType.EAGER
+//            fetch = FetchType.LAZY
     )
     private List<User> users;
+
+    @Override
+    public String toString() {
+        return "City{" +
+                "cityId=" + cityId +
+                ", cityName='" + cityName + '\'' +
+                ", users=" + users +
+                '}';
+    }
 }

@@ -24,11 +24,17 @@ class CityRepositoryTest {
     @Test
     public void findAllCity(){
         List<City> cityList = cityRepository.findAll();
-        System.out.print(cityList);
+        cityList.stream().forEach(System.out::print);
+//        System.out.print(cityList);
     }
 
     @Test
-    public void findUserByCity(){
+    public void findAllWithUsers(){
+        List<City> cityList = cityRepository.findAllWithUsers();
 
+//        cityList.stream()
+//                        .forEach(c -> System.out.print("C " + c));
+
+        System.out.print("City con usuario: " + cityList);
     }
 }

@@ -9,6 +9,9 @@ import java.util.List;
 
 @Repository
 public interface CityRepository extends JpaRepository<City,Long> {
-    @Query("SELECT c FROM City c LEFT JOIN FETCH c.users")
+//    @Query("SELECT c FROM City c LEFT JOIN FETCH c.users")
+    @Query("SELECT c FROM City c LEFT JOIN c.users")
     List<City> findAllWithUsers();
+
+
 }

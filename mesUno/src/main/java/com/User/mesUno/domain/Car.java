@@ -7,7 +7,15 @@ import lombok.*;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "tbl_car")
+@Table(
+        name = "tbl_car",
+        uniqueConstraints = {
+                @UniqueConstraint(
+                        name = "unique_car_name_brand",
+                        columnNames = {"carName", "carBrand"}
+                )
+        }
+)
 @ToString(exclude = "user")
 public class Car {
     @Id

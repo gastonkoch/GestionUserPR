@@ -10,4 +10,5 @@ public interface ICityService {
     public void saveCity(CityDto city);
     public void deleteCity(Long cityId);
     public void updateCity(CityDto cityDto);
+//    public void findAllCity();
 }

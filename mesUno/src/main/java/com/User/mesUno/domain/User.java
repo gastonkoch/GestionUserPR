@@ -3,6 +3,8 @@ package com.User.mesUno.domain;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 @Entity
 @Data
 @Builder
@@ -54,6 +56,23 @@ public class User {
     )
     private City city;
 
+    @ManyToMany(
+            cascade = CascadeType.ALL,
+            fetch = FetchType.EAGER
+    )
+    @JoinTable(
+            name = "rol_user_map",
+            joinColumns = @JoinColumn(
+                    name = "user_Id",
+                    referencedColumnName = "userId"
+            ),
+            inverseJoinColumns = @JoinColumn(
+                    name = "rol_Id",
+                    referencedColumnName = "rolId"
+            )
+    )
+    private List<Rol> rolList;
+
     @Override
     public String toString() {
         return " User{" +
@@ -62,7 +81,8 @@ public class User {
                 ", userEmail='" + userEmail + '\'' +
                 ", userPassword='" + userPassword + '\'' +
                 ", car='" + car + '\'' +
-                ", city='" + city + '\'' +
+//                ", city='" + city + '\'' +
+                ", rolList='" + rolList + '\'' +
                 '}';
     }
 

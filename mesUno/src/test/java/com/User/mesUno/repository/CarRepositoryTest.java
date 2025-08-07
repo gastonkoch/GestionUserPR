@@ -41,4 +41,14 @@ class CarRepositoryTest {
 
         System.out.print("carDto " + carDto);
     }
+
+    @Test
+    public void saveCar(){
+        Car car = Car.builder()
+                .carName("Cronos")
+                .carBrand("Fiat")
+                .build();
+
+        carRepository.save(car);
+    }
 }

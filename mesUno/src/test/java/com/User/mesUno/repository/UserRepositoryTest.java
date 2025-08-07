@@ -2,6 +2,7 @@ package com.User.mesUno.repository;
 
 import com.User.mesUno.domain.Car;
 import com.User.mesUno.domain.City;
+import com.User.mesUno.domain.Rol;
 import com.User.mesUno.domain.User;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,21 +23,33 @@ class UserRepositoryTest {
     @Test
     public void saveUser(){
 
+        Car car = Car.builder()
+                .carName("Palio")
+                .carBrand("Fiat")
+                .build();
+
 //        Car car = Car.builder()
-//                .carName("Palio")
-//                .carBrand("Fiat")
+//                .carName("BMW")
+//                .carBrand("113")
 //                .build();
-//
-//
-//
-//        User user = User.builder()
-//                .userName("pepe")
-//                .userEmail("pepe@gmail.com")
-//                .userPassword("3333")
-//                .car(car)
-//                .build();
-//
-//        userRepository.save(user);
+
+        Rol rol1 = Rol.builder()
+                .rolName("Admin")
+                .build();
+
+        Rol rol2 = Rol.builder()
+                .rolName("Razo")
+                .build();
+
+        User user = User.builder()
+                .userName("PRUEBA")
+                .userEmail("PRUEBA@gmail.com")
+                .userPassword("6234123")
+                .car(car)
+                .rolList(List.of(rol1,rol2))
+                .build();
+
+        userRepository.save(user);
 
     }
 
